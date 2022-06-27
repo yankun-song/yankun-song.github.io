@@ -48,8 +48,10 @@ img_path: /assets/posts/
    This keeps everything modular and fast. It's also easier to read and debug. Because in the two-way mode, it's usually not easy to know which child is changing the value.
 
 5. ## Server Side Rendering Vs Client Side Rendering
+
    The main difference is that for SSR your service response to the browser is the HTML of your page that is ready to be rendered,while for CSR the browser gets a pretty empty documents which links to your javaScript.
-   | | SSR | CSR |
-   |-----|---------|-----|
-   | Pros | - Search engines can crawl the site for better SEO<br />- The initial page load is faster<br />- Great for static sites. |- Rich site interactions<br />- Fast website rendering after the initial load<br />- Great for web applications<br /> - Robust selection of JavaScript libraries|
-   | Cons | - Frequent server requests<br />- An overall slow page rendering<br />- Full page reloads<br />- Non-rich site interactions |- Low SEO if not implemented correctly<br />- Initial load might require more time<br />- In most cases, requires an external library|
+
+   |      | SSR                                                                                                                         | CSR                                                                                                                                                              |
+   | ---- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | Pros | - Search engines can crawl the site for better SEO<br />- The initial page load is faster<br />- Great for static sites.    | - Rich site interactions<br />- Fast website rendering after the initial load<br />- Great for web applications<br /> - Robust selection of JavaScript libraries |
+   | Cons | - Frequent server requests<br />- An overall slow page rendering<br />- Full page reloads<br />- Non-rich site interactions | - Low SEO if not implemented correctly<br />- Initial load might require more time<br />- In most cases, requires an external library                            |
