@@ -6,11 +6,11 @@ tags: [React] # TAG names should always be lowercase
 img_path: /assets/posts/
 ---
 
-## 1. What's React?
+## 1. What's React
 
 React is an open-source front-end JavaScript library that is used for building user interfaces, especially for single-page applications. It is used for handling view layer for web and mobile apps. So it's good at handling the page rendering in response to the change of data. However, it's not good at passing values among components, and that's why we need Redux to assist development.
 
-## 2. Major features of React?
+## 2. Major features of React
 
 - JSX(JavaScript Syntax Extension)
   JSX is a combination of HTML and JavaScript. You can embed JavaScript objects inside the HTML elements.JSX makes codes easy and understandable. It is easy to learn if you know HTML and JavaScript.
@@ -32,6 +32,17 @@ Whenever there is a modification in the web application, the whole virtual DOM i
 
 Once it finds the difference, then DOM updates only the part that has changed recently and everything remains the same.
 
+### Diffing Algorithm
+
+Two assumptions:
+
+- Two elements of different types will produce different trees.
+- The developer can hint at which child elements may be stable across different renders with a `key` prop.
+
+Compare the root element. If they're different types, then discard the old tree and build a new one. If they're the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes.
+
+The `key` prop can help compare faster. You can pass an item’s index in the array as a key. This can work well if the items are never reordered, but reorders will be slow.
+
 ### Benefits
 
 - Better performance. The cost of creating JS objects is much less than creating a DOM. Comparing JS objects is also faster.
@@ -41,13 +52,18 @@ Once it finds the difference, then DOM updates only the part that has changed re
 
 Document Object Model. It's a language independent interface. It treats HTML/XML document as a tree.
 
-## 4. Data flow in React?
+## 4. Data flow in React
 
 React implements one-way data flow using props, from top to bottom. Parents can pass values to children, while children cannot return value to parents. If we still need to change it in the child component, then we need to pass parent's method which can change the value to the child, and invoke that method in the child component.
 
 This keeps everything modular and fast. It's also easier to read and debug. Because in the two-way mode, it's usually not easy to know which child is changing the value.
 
-## 5. Server Side Rendering Vs Client Side Rendering
+## 5. Lifecycle methods
+
+![](../assets/posts/frontend_lifecycle_of_components.png)
+_Lifecycle of Components_
+
+## 6. Server Side Rendering Vs Client Side Rendering
 
 The main difference is that for SSR your service response to the browser is the HTML of your page that is ready to be rendered,while for CSR the browser gets a pretty empty documents which links to your javaScript.
 
