@@ -60,7 +60,8 @@ This keeps everything modular and fast. It's also easier to read and debug. Beca
 
 ## 5. Lifecycle methods
 
-![](../assets/posts/frontend_lifecycle_of_components.png)
+[Details](https://blog1.westagilelabs.com/react-lifecycle-methods-9faf9b434dbe)
+![](frontend_lifecycle_of_components.png)
 _Lifecycle of Components_
 
 ## 6. Server Side Rendering Vs Client Side Rendering
