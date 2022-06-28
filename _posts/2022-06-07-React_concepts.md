@@ -72,3 +72,11 @@ The main difference is that for SSR your service response to the browser is the 
 | ---- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Pros | - Search engines can crawl the site for better SEO<br />- The initial page load is faster<br />- Great for static sites.    | - Rich site interactions<br />- Fast website rendering after the initial load<br />- Great for web applications<br /> - Robust selection of JavaScript libraries |
 | Cons | - Frequent server requests<br />- An overall slow page rendering<br />- Full page reloads<br />- Non-rich site interactions | - Low SEO if not implemented correctly<br />- Initial load might require more time<br />- In most cases, requires an external library                            |
+
+## 7. Functional vs Class components
+
+- Syntax. Just like in their names, a functional component is just a plain JavaScript function that returns JSX. A class component is a JavaScript class that extends `React.Component` which has a render method.
+- They are called stateless function components because they just take props as an argument and return a react element. They don’t manage state and don’t have a lifecycle, while class components do.
+- The major difference is the syntax. It relates to the way we declare components, pass props, handling states, manage lifecycle.
+- Function components capture the props and state by default. It is not a bug, but a feature of functional components.
+- Functional components require less code to write an equal component. However, that doesn’t mean that functional components more readable and convenient to use. If a developer is used to work with object-oriented programming, he finds using class components much more comfortable. Those who are used to functional programming like functional components more than class components.
