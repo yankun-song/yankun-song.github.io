@@ -44,3 +44,7 @@ We set up a rule to trigger a lambda function to put the MQTT message into the D
 Then in EC2 Web Server, we program a simple web interface to scan the table and present the data.
 
 The great thing about Dynamo DB is that it's a lot easier to work with than traditional SQL tables and works well with IoT type messages like MQTT.
+
+
+References:
+https://www.youtube.com/watch?v=242Pkw0zngw
