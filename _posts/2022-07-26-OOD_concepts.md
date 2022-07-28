@@ -6,3 +6,4 @@ tags: [OOD] # TAG names should always be lowercase
 img_path: /assets/posts/
 ---
 
+## Encapsulation
