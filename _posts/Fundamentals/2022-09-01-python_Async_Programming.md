@@ -14,6 +14,8 @@ Each statement in your code is executed one after the other. This means each sta
 
 Asynchrony, refers to the occurence of events indepentent of the main program flow.
 
+It is different from `Multi-processing`. Say we have two functions, in `multi-processing`, we can have these functions running at the same time. While `Async programming` just allow us to execute function1 first, and if function1 is now waiting for something, being idle, then we can do something for function2 until function1 needs the computing power again.
+
 ## Coroutines
 
 Coroutines are computer program components that generalize subroutines for non-preemptive multitasking, by allowing execution to be suspended and resumed.
@@ -26,7 +28,46 @@ When you add the `async` keyword in front of a function's definition, it's actua
 
 The event loop is a programming construct or design pattern that waits for and dispatches events or messages in a program.
 
-## example 1
+In python, we can use `asyncio.create_task()` to create a task. For a task, it will be added to the event loop. For the tasks in the event loop, they will only be executed when the main function is being idle, or is done, or the main function is waiting the result of this task (by using the `await` keyword). In case of main function has ended, while the task is waiting for something, the program will terminate without waiting for the task.
+
+## example 1.1
+```py
+import asyncio
+
+async def main():
+   task = asyncio.create_task(other_function())
+   print("A")
+   print("B")
+
+async def other_function():
+   print("1")
+   await asyncio.sleep(2)
+   print("2")
+
+asyncio.run(main())
+```
+The output would be "A" -- "B" -- "1".
+
+## example 1.2
+```py
+import asyncio
+
+async def main():
+   task = asyncio.create_task(other_function())
+   print("A")
+   await asyncio.sleep(1)
+   print("B")
+
+async def other_function():
+   print("1")
+   await asyncio.sleep(2)
+   print("2")
+
+asyncio.run(main())
+```
+The output would be "A" -- "1", waiting 1s,  -- "B".
+
+## example 2
 
 ```py
 import asyncio
@@ -47,7 +88,7 @@ asyncio.run(main())
 
 In the example above, python would print out 'hello', then 'text', wait for 1s, then print 'finished'. The total time cost would be around 1.3s.
 
-## example 2
+## example 3
 
 ```py
 import asyncio
@@ -66,7 +107,7 @@ asyncio.run(main())
 
 In the example above, python would print out 'hello', then 'finished', then 'text'. The total time cost would be around 0.3s.
 
-## example 3
+## example 4
 
 ```py
 import asyncio
@@ -86,7 +127,7 @@ asyncio.run(main())
 
 In the example above, python would print out 'hello', then 'text', wait for 1s, then print 'finished'. The total time cost would be around 1.3s. Same as example 1.
 
-## example 4
+## example 5
 
 ```py
 import asyncio
@@ -106,7 +147,7 @@ asyncio.run(main())
 
 In the example above, python would print out 'hello', then 'text', wait for 1s, then print 'finished'. The total time cost would be around 1.3s.
 
-## example 5
+## example 6
 
 ```py
 async def fetch_data():
@@ -133,7 +174,7 @@ The output would be "start fetching", "0--1--2--3", "done fetch" and {'data': 1}
 
 The reason is, first we execute `fetch_data`, then it will sleep for 2s. So the program will find something else to do, thus move to the creation and execution of `task2`. Inside `task2`, we are asked to sleep 0.5s, so the program will find something else to do, but `await task1` says, you can't go down any more, let's wait task1 to finish. Once task1 is done, we are able to go down and find some code to execute during each 0.5s sleep. So we print `value` and come to the end of the main function. The rest of `task2` will not be executed, because we are not told to wait for it.
 
-## example 6
+## example 7
 
 ```py
 async def fetch_data():
