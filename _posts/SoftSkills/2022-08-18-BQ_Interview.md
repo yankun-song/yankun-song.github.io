@@ -1,5 +1,5 @@
 ---
-title: Interview Tips
+title: BQ Interview Tips
 date: 2022-08-18 00:00:00 -500
 categories: [SoftSkills]
 tags: [Interview] # TAG names should always be lowercase
