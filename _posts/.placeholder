@@ -6,3 +6,6 @@ tags: [TAG]     # TAG names should always be lowercase
 ---
 
   The [`Man in the hole`](https://pipdecks.com/pages/man-in-a-hole) is a better tactic.
+
+  ![](frontend_lifecycle_of_components.png)
+_Lifecycle of Components_

@@ -59,3 +59,39 @@ Then I implemented some functions to check strings. After that, the string tests
 Then I implemented functions to check arrays. After that, more test cases should pass.
 
 I did it again and again until all of them got a pass.
+
+## Contractual
+
+![](contractual_db_design.png)
+_Contractual Database Design_
+
+## What you read to stay up-to-date?
+
+I subscribe to some newsletters and check github trending from time to time. Two newsletters I like most are Quastor and ByteByteGo. One for tech blogs posts, and the other for system design.
+
+One interesting thing I've learned is how Quora shards their MySQL database. It was my first time to know the concept of `database sharding`.
+
+`Sharding` is a method of distributing a single dataset across multiple databases. This allows larger datasets to be split into smaller chunks and stored in multiple data nodes, so the total storage capacity of the system can be increased. Other benefits include increased read/write throughput and high availability.
+
+However, sharding also have some disadvantages. It introduces additional latency on every query, because the database needs to route a query to the appropriate shard. It is also harder to administrate.
+
+## Why Data Engineer
+
+At the early stage of my professional career, I don't want to limit myself to a too specific role. I like coding and solving technical problems, so they are very similar from my side.
+
+Since I know both software development and data engineering, I'm open to any role the company needs. There might be some warm up needed at the very beginning, but I'm totally ok with it and I believe that's not a big deal.
+
+## SQL vs noSQL
+
+### SQL
+
+1. must follow predefined schema
+2. vertically scalable
+3. some relationships between tables (one to one, one to many...)
+4. ACID (Atomicity, Consistency, Isolation, Durability)
+5. support complex queries, not good for tons of data
+
+### NoSQL
+
+1. Dynamic schemas, stored with key-value, document. Good for unstructured or semi-structured data like JSON.
+2. horizontally scalable
